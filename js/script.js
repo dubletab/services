@@ -2,17 +2,17 @@
 
 let myArr = [];
 
-for (let i = 1; i < 19; i++){
+for (let i = 1; i < 18; i++){
     let myObj = {};
     myObj.id = i;
-    myObj.state = 'UP';
-    myObj.uptime = '123';
-    myObj.cpu = 25;
-    myObj.ram = 97;
-    myObj.disk = 35;
+    myObj.state = getRandomValue(0, 5) ? 'UP': "DOWN"; /* повышаем шанс на UP */
+    myObj.uptime = getRandomValue(0, 300);
+    myObj.cpu = getRandomValue(0, 100);
+    myObj.ram = getRandomValue(0, 100);
+    myObj.disk = getRandomValue(0, 100);
     myArr.push(myObj);
 }
-console.log(myArr);
+// console.log(myArr);
 
 
 ajaxCall();
@@ -63,6 +63,11 @@ function ajaxCall() {
 
     
 }
+
+function getRandomValue(min, max) {
+    return min + Math.round((max - min) * Math.random());
+}
+
 // Вариант с входящими данными с сервера
 // function ajaxCall() {
 //     $.ajax({
