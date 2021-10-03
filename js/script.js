@@ -2,8 +2,9 @@
 
 let myArr = [];
 
-for (let i = 1; i < 18; i++){
+for (let i = 1; i < 19; i++){
     let myObj = {};
+    if(!getRandomValue(0, 15)) continue;
     myObj.id = i;
     myObj.state = getRandomValue(0, 5) ? 'UP': "DOWN"; /* повышаем шанс на UP */
     myObj.uptime = getRandomValue(0, 300);
