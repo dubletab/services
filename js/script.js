@@ -1,6 +1,50 @@
 "use strict";
 
+const wrapper = document.querySelector('.wrapper');
 let myArr = [];
+
+for (let i = 1; i < 19; i++) {
+    const block = document.createElement('div');
+    block.classList.add('server');
+    block.id = i;
+    block.innerHTML = `        <div class="server__head">
+            <div class="title">System${i}</div>
+            <div class="timer">Н/Д</div>
+        </div>
+        <div class="server__body">
+            <div class="cpu">
+                <div class="cpu__title">CPU</div>
+                <div class="cpu__status status">
+                    <div class="cpu__bar bar">
+                        <div class="cpu__invisiblebar invisiblebar"></div>
+                    </div>
+                    <div class="cpu__percentage percentage">Н/Д</div>
+                </div>
+            </div>
+
+            <div class="ram">
+                <div class="ram__title">RAM</div>
+                <div class="ram__status status">
+                    <div class="ram__bar bar">
+                        <div class="ram__invisiblebar invisiblebar"></div>
+                    </div>
+                    <div class="ram__percentage percentage">Н/Д</div>
+                </div>
+            </div>
+
+            <div class="disk">
+                <div class="disk__title">DISK</div>
+                <div class="disk__status status">
+                    <div class="disk__bar bar">
+                        <div class="disk__invisiblebar invisiblebar"></div>
+                    </div>
+                    <div class="disk__percentage percentage">Н/Д</div>
+                </div>
+            </div>
+        </div>`;
+    wrapper.append(block);
+}
+
 
 for (let i = 1; i < 19; i++){
     let myObj = {};
